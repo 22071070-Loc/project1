@@ -48,8 +48,8 @@ Một ứng dụng web cho phép người dùng đăng ký, đăng nhập và qu
 
 ### Quan hệ giữa các bảng
 - Một **User** có thể có nhiều **List**  
-- Mỗi **List** chứa nhiều **Task**    
-- Nếu **List** bị xóa → tất cả **Task** trong danh sách đó cũng bị xóa (`ON DELETE CASCADE`)
+- Mỗi **List** có thể chứa nhiều **Task**    
+- Nếu **List** bị xóa → tất cả **Task** trong danh sách đó cũng bị xóa theo (`ON DELETE CASCADE`)
 
 ---
 
@@ -58,7 +58,7 @@ Một ứng dụng web cho phép người dùng đăng ký, đăng nhập và qu
 ### a. Nhóm Chức Năng Xác Thực (Authentication)
 
 #### **Đăng ký (`register.php`)**
-- Cho phép người dùng mới tạo tài khoản  
+- Cho phép người dùng mới tạo tài khoản cá nhân
 - Yêu cầu **Username** (duy nhất) và **Password**  
 - Mật khẩu được mã hóa bằng `password_hash()` trước khi lưu vào cơ sở dữ liệu  
 
@@ -97,7 +97,7 @@ Một ứng dụng web cho phép người dùng đăng ký, đăng nhập và qu
   - Mỗi task có các nút **Edit**, **Delete**, **View Detail** và 1 `checkbox`
 
 - **Đánh dấu đã hoàn thành (`list_detail.php`)**  
-  - Cho phép người dùng hoàn thành công việc khi bấm vào checkbox
+  - Cho phép người dùng đánh dấu hoàn thành công việc khi bấm vào checkbox
 
 - **Tạo Task mới (`create_task.php`)**  
   - Cho phép người dùng nhập **Title**, **Description**, **DueDate**, **Priority** và chọn danh sách chứa task  
